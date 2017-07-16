@@ -6,6 +6,6 @@ module.exports = function (app: any){
  app.use("/", router);
 };
 
-router.get("/", function(req, res){
- res.send("hey");
-});
+// router.get("/", function(req, res){
+
+// });

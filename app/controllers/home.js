@@ -5,6 +5,5 @@ var router = express.Router();
 module.exports = function (app) {
     app.use("/", router);
 };
-router.get("/", function (req, res) {
-    res.send("hey");
-});
+// router.get("/", function(req, res){
+// }); 
