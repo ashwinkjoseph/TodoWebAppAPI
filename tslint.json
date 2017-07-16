@@ -8,7 +8,12 @@
         "no-console": [
             false
         ],
-        "eofline": false
+        "eofline": false,
+        "indent": [
+            true,
+            "tabs",
+            1
+        ]
     },
     "rulesDirectory": []
 }
