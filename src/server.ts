@@ -25,9 +25,7 @@ dotenv.config({ path: ".env.example" });
  * Routes
  */
 import accountRouter from "./routes/account";
-import apiRouter from "./routes/api";
 import contactRouter from "./routes/contact";
-import oauthRouter from "./routes/oauth";
 import rootRouter from "./routes/root";
 
 /**
@@ -50,7 +48,7 @@ class App {
   private middleware(): void {
     this.express.set("port", process.env.PORT || 3000);
     this.express.set("views", path.join(__dirname, "../views"));
-    this.express.set("view engine", "pug");
+    this.express.set("view engine", "ejs");
     this.express.use(compression());
     this.express.use(logger("dev"));
     this.express.use(bodyParser.json());
@@ -95,8 +93,6 @@ class App {
    */
   private routes(): void {
     this.express.use("/", rootRouter);
-    this.express.use("/api", apiRouter);
-    this.express.use("/auth", oauthRouter);
     this.express.use("/account", accountRouter);
     this.express.use("/contact", contactRouter);
   }
