@@ -5,22 +5,12 @@ import * as mongoose from "mongoose";
 export type UserModel = mongoose.Document & {
   email: string,
   password: string,
-  passwordResetToken: string,
-  passwordResetExpires: Date,
-
-  facebook: string,
-  tokens: AuthToken[],
 
   profile: {
     name: string,
     gender: string,
-    location: string,
-    website: string,
-    picture: string,
-  },
+  }
 
-  comparePassword: (candidatePassword: string, cb: (err: any, isMatch: any) => {}) => void,
-  gravatar: (size: number) => string,
 };
 
 // tslint:disable-next-line:interface-name
