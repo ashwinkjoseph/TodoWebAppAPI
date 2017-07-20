@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response, Router } from "express";
 
-import * as homeController from "../controllers/home";
+import homeController from "../controllers/home";
 import * as userController from "../controllers/user";
 class Root {
   public router: Router;
