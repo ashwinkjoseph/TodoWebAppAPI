@@ -19,7 +19,7 @@ export type UserModel = mongoose.Document & {
     picture: string,
   },
 
-  comparePassword: (candidatePassword: string, cb: (err: any, isMatch: any) => {}) => void,
+  comparePassword: (candidatePassword: string, cb: (err: Error, isMatch: boolean) => void) => void,
   gravatar: (size: number) => string,
 };
 
