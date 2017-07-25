@@ -16,5 +16,5 @@ class TasksController {
   }
 }
 
-const taskControllerinstance = new TasksController();
-export default taskControllerinstance;
+const taskController = new TasksController();
+export default taskController;

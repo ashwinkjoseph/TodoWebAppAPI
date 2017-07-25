@@ -1,14 +1,14 @@
 import * as mongoose from "mongoose";
 
 export type ReminderModel = mongoose.Document & {
-  time: string,
   type: string,
+  time: Date,
   taskID: mongoose.Schema.Types.ObjectId,
 };
 
 const ReminderSchema = new mongoose.Schema({
   taskID: mongoose.Schema.Types.ObjectId,
-  time: String,
+  time: Date,
   type: String,
 });
 
