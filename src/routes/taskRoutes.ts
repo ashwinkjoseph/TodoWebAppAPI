@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response, Router } from "express";
 
-import {default as taskController} from "../controllers/task";
+import { default as taskController } from "../controllers/task";
 class Contact {
   public router: Router;
   public constructor() {
