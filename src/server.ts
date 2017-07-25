@@ -27,6 +27,7 @@ dotenv.config({ path: ".env.example" });
 import accountRouter from "./routes/account";
 import contactRouter from "./routes/contact";
 import rootRouter from "./routes/root";
+import taskRouter from "./routes/taskRoutes";
 
 /**
  * API keys and Passport configuration.
@@ -95,6 +96,7 @@ class App {
     this.express.use("/", rootRouter);
     this.express.use("/account", accountRouter);
     this.express.use("/contact", contactRouter);
+    this.express.use("/task", taskRouter);
   }
 
   private launchConf() {
