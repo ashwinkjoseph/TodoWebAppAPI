@@ -5,13 +5,13 @@ class TasksController {
   public add(req: Request, res: Response, next: NextFunction) {
     // logic for post
   }
-  public remove(req: Request, res: Response, next: NextFunction){
+  public remove(req: Request, res: Response, next: NextFunction) {
     // logic for DELETE
   }
-  public update(req: Request, res: Response, next: NextFunction){
+  public update(req: Request, res: Response, next: NextFunction) {
     // logic for PUT
   }
-  public read(req: Request, res: Response, next: NextFunction){
+  public read(req: Request, res: Response, next: NextFunction) {
     // logic for GET
   }
 }
