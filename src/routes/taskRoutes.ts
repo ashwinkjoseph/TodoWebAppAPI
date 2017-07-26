@@ -1,3 +1,4 @@
+import * as errorHandler from "errorhandler";
 import { NextFunction, Request, Response, Router } from "express";
 
 import { default as taskController } from "../controllers/task";

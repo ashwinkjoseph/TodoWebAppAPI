@@ -97,6 +97,7 @@ class App {
     this.express.use("/account", accountRouter);
     this.express.use("/contact", contactRouter);
     this.express.use("/task", taskRouter);
+    this.express.use(errorHandler());
   }
 
   private launchConf() {
@@ -108,8 +109,6 @@ class App {
       console.log("MongoDB connection error. Please make sure MongoDB is running.");
       process.exit();
     });
-
-    this.express.use(errorHandler());
 
     /**
      * Start Express server.
