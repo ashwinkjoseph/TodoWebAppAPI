@@ -1,11 +1,11 @@
 {
   "compilerOptions": {
     "module": "commonjs",
-    "target": "es5",
+    "target": "es3",
     "noImplicitAny": true,
     "moduleResolution": "node",
     "sourceMap": true,
-    "outDir": "dist",
+    "outDir": "../../dist/public/js/",
     "baseUrl": ".",
     "paths": {
       "*": [
@@ -15,9 +15,6 @@
     }
   },
   "include": [
-    "src/**/*"
-  ],
-  "exclude": [
-    "src/public/**/*"
+    "**/*"
   ]
 }
