@@ -10,11 +10,12 @@ export type TaskModel = mongoose.Document & {
 };
 
 const TaskSchema = new mongoose.Schema({
+  comments:  String,
   end: String,
   priority: Number,
   start: Date,
   task: Date,
   userID: mongoose.Schema.Types.ObjectId,
 });
-const Task = mongoose.model<TaskModel>("task", TaskSchema);
+const Task = mongoose.model<TaskModel>("Task", TaskSchema);
 export default Task;
