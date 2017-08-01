@@ -11,21 +11,21 @@ describe("GET /task/read", () => {
 
 describe("POST /task/add", () => {
   it("should return 200 OK", (done) => {
-    request.get("/task/add")
+    request.post("/task/add")
       .expect(200, done);
   });
 });
 
 describe("PUT /task/update", () => {
   it("should return 200 OK", (done) => {
-    request.get("/task/update")
+    request.put("/task/update")
       .expect(200, done);
   });
 });
 
 describe("DELETE /task/remove", () => {
   it("should return 200 OK", (done) => {
-    request.get("/task/remove")
+    request.del("/task/remove")
       .expect(200, done);
   });
 });
