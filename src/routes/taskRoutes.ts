@@ -11,8 +11,8 @@ class Task {
   private init() {
     this.router.get("/read", taskController.read);
     this.router.post("/add", taskController.add);
-    this.router.put("/update", taskController.update);
-    this.router.delete("/remove", taskController.remove);
+    this.router.put("/update/:taskID", taskController.update);
+    this.router.delete("/remove/:taskID", taskController.remove);
   }
 }
 

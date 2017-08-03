@@ -12,20 +12,63 @@ class ReminderController {
       type: req.body.type,
     });
     reminder.save((err) => {
+      if (err) {
+        res.json({status: "error"});
+      }
       res.json({status: "ok"});
     });
   }
   public remove(req: Request, res: Response, next: NextFunction) {
     // logic for DELETE
+    Reminder.remove({
+      _id : new mongoose.Schema.Types.ObjectId(req.params.reminderID),
+    }).exec((err, reminder) => {
+      if (err) {
+        res.status(500).json({status: err});
+      }
+      else {
+        res.status(200).json({status: "Success"});
+      }
+    });
     return res.json({status: "ok"});
   }
   public update(req: Request, res: Response, next: NextFunction) {
     // logic for PUT
+    Reminder.findById(req.params.taskID).exec((err, reminder: ReminderModel) => {
+      reminder.time = new Date(req.body.time);
+      reminder.type = req.body.type;
+      reminder.save((err) => {
+        if (err) {
+          res.status(500).json({status: err});
+        }
+        else {
+          res.status(500).json({status: "ok"});
+        }
+      });
+    });
     return res.json({status: "ok"});
   }
   public read(req: Request, res: Response, next: NextFunction) {
     // logic for GET
+    Reminder.find((err, reminders) => {
+      if (err) {
+        res.status(500).json({status: "failed"});
+      }
+      else {
+        res.status(200).json(reminders);
+      }
+    });
     return res.render("");
+  }
+  public readParticular(req: Request, res: Response, next: NextFunction) {
+    Reminder.findById(req.params.taskID).exec((err, reminder: ReminderModel) => {
+      if (err) {
+        res.status(500).json({status: err});
+      }
+      else {
+        res.status(200).json(reminder);
+      }
+    });
   }
 }
 

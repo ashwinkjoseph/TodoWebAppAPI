@@ -12,7 +12,7 @@ describe("GET /task/read", () => {
 
 describe("POST /task/add", () => {
   it("should return 200 OK", () => {
-    return request.get("/task/add").then((response) => {
+    return request.post("/task/add").then((response) => {
       expect(response.status).toBe(200);
     });
   });
@@ -20,7 +20,7 @@ describe("POST /task/add", () => {
 
 describe("PUT /task/update", () => {
   it("should return 200 OK", () => {
-    return request.get("/task/update").then((response) => {
+    return request.put("/task/update").then((response) => {
       expect(response.status).toBe(200);
     });
   });
@@ -28,7 +28,7 @@ describe("PUT /task/update", () => {
 
 describe("DELETE /task/remove", () => {
   it("should return 200 OK", () => {
-    return request.get("/task/remove").then((response) => {
+    return request.delete("/task/remove").then((response) => {
       expect(response.status).toBe(200);
     });
   });
