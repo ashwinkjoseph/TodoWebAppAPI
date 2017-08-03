@@ -26,6 +26,7 @@ dotenv.config({ path: ".env.example" });
  */
 import accountRouter from "./routes/account";
 import contactRouter from "./routes/contact";
+import reminderRouter from "./routes/reminderRoutes";
 import rootRouter from "./routes/root";
 import taskRouter from "./routes/taskRoutes";
 
@@ -97,6 +98,7 @@ class App {
     this.express.use("/account", accountRouter);
     this.express.use("/contact", contactRouter);
     this.express.use("/task", taskRouter);
+    this.express.use("/reminder", reminderRouter);
     this.express.use(errorHandler());
   }
 

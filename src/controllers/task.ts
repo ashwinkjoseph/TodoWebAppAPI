@@ -2,7 +2,6 @@ import { NextFunction, Request, Response } from "express";
 import * as moment from "moment";
 import * as mongoose from "mongoose";
 import * as request from "request-promise-native";
-import { default as Reminder, ReminderModel } from "../models/Reminder";
 import { default as Task, TaskModel } from "../models/Tasks";
 class TasksController {
   public add(req: Request, res: Response, next: NextFunction) {
@@ -23,7 +22,7 @@ class TasksController {
         Task.findOne().sort({created_at: -1}).exec((err, id) => {
           request({
             formData: {
-              taskID: mongoose.Schema.Types.ObjectId,
+              taskID: new mongoose.Schema.Types.ObjectId(id._id),
               time: req.body.time,
               type: req.body.type,
             },

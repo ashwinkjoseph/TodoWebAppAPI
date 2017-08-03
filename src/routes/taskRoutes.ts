@@ -2,7 +2,7 @@ import * as errorHandler from "errorhandler";
 import { NextFunction, Request, Response, Router } from "express";
 
 import { default as taskController } from "../controllers/task";
-class Contact {
+class Task {
   public router: Router;
   public constructor() {
     this.router = Router();
@@ -16,5 +16,5 @@ class Contact {
   }
 }
 
-const contactRoutes = new Contact();
-export default contactRoutes.router;
+const TaskRoutes = new Task();
+export default TaskRoutes.router;
